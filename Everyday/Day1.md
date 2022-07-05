@@ -19,20 +19,32 @@
 ## Windows没有行通
 ## Linux安装
 1.sudo apt install curl
+
 2.curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
   如果出现错误：
   curl: (23) Failure writing output to destination
   rustup: command failed: downloader https://mirrors.ustc.edu.cn/rust-static/rustup/dist/x86_64-unknown-linux-       gnu/rustup-init /tmp/tmp.NYHsHHrYc1/rustup-init x86_64-unknown-linux-gnu
+  
   解决：
+  
   确认一下你的curl是不是用snap安装的：
+  
   sudo snap list | grep curl
 
   如果是，卸载：
+  
   sudo snap remove curl
 
   然后用apt重新安装：
+  
   sudo apt install curl
 
   如果出现“无法下载”，执行
+  
   sudo apt-get update
+  
+  安装成功，将出现下面这行：
+
+Rust is installed now. Great!
 
